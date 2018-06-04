@@ -9,6 +9,9 @@
 #include <QUrl>
 #include <QVariant>
 #include <QQmlEngine>
+#include <QMultiMap>
+#include "photoitem.h"
+
 
 #include "myimageprovider.h"
 #define IMAGE_BUF_SIZE 1024
@@ -34,6 +37,7 @@ private:
     MyImageProvider *imageProvider;
 
     QStringList photoUrlList;
+    QMultiMap<QString, photoItem*> photoList;
     int imageCount;
     int imagePointer;
     QList<int> imagesShown;

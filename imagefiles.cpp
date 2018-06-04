@@ -112,10 +112,11 @@ void imageFiles::readImageURLsFromDisk(QDir d)
                 qDebug() << p->photoFileName() << "--" << p->photoPath() << "--" << p->photoFullPath();
 
                 photoUrlList.append(p->photoFullPath().absolutePath());
-                p->deleteLater();
+                photoList.insert(p->photoFileName(),p);
             }
         }
     }
+    qDebug() << "Number of photos is:" << photoList.size();
     imageCount = photoUrlList.count();
 //    qDebug() << imageCount << photoUrlList.at(0);
 }
